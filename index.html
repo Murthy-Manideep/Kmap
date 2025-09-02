@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>K-Map Solver (2–5 vars) + Verilog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>K-Map Solver (2–5 variables)</h1>
+
+  <div class="row controls">
+    <div class="card">
+      <div class="row">
+        <label for="vars">Variables:</label>
+        <select id="vars">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+        </select>
+
+        <button id="all0">All = 0</button>
+        <button id="all1">All = 1</button>
+        <button id="rand">Random</button>
+        <button id="solve" class="pill">Solve</button>
+      </div>
+      <div class="muted">Click a truth-table output or K-map cell to toggle 0 → 1 → X.</div>
+    </div>
+  </div>
+
+  <div class="row main">
+    <div class="card" style="flex:1; min-width:320px;">
+      <h3>Truth Table</h3>
+      <div id="tt"></div>
+    </div>
+
+    <div class="card kmap-area" style="flex:1; min-width:360px;">
+      <h3>K-Map</h3>
+      <div id="kmap" class="kmap"></div>
+      <div class="muted"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Simplified expression</h3>
+    <div><strong>Expression:</strong> <span id="sop" class="mono"></span></div>
+    <div class="muted"></div>
+  </div>
+
+  <div class="card">
+    <h3>Verilog Module</h3>
+    <pre id="verilog" class="mono" style="white-space: pre-wrap;"></pre>
+  </div>
+
+  <div class="card">
+    <h3>Verilog Testbench</h3>
+    <pre id="testbench" class="mono" style="white-space: pre-wrap;"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
