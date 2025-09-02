@@ -3,6 +3,7 @@ const grayOrder = n => {
   for (let i = 0; i < (1 << n); i++) res.push(i ^ (i >> 1));
   return res;
 };
+
 const toBits = (x, n) => x.toString(2).padStart(n, '0');
 const bitCount = x => x.toString(2).split('').filter(c => c === '1').length;
 const varsForN = n => ['A', 'B', 'C', 'D', 'E'].slice(0, n);
