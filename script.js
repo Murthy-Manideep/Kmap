@@ -7,7 +7,7 @@ const toBits = (x, n) => x.toString(2).padStart(n, '0');
 const bitCount = x => x.toString(2).split('').filter(c => c === '1').length;
 const varsForN = n => ['A', 'B', 'C', 'D', 'E'].slice(0, n);
 
-let N = 5;
+let N = 3;
 let truth = [];
 const ttDiv = document.getElementById('tt');
 const kmapDiv = document.getElementById('kmap');
